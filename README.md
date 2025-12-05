@@ -1,6 +1,6 @@
 # Web Dashboard & Final Polish
 
-## Today's Objective
+## Objective
 Create a simple web interface to view your finance data and polish the CLI application.
 
 ---

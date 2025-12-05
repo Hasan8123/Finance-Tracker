@@ -128,5 +128,38 @@ def import_data(
         console.print(f"[bold red]Error during import:[/bold red] {e}")
         raise typer.Exit(1)
 
+    except Exception as e:
+        console.print(f"[bold red]Error during import:[/bold red] {e}")
+        raise typer.Exit(1)
+
+@app.command()
+def clear(
+    data_type: str = typer.Argument(..., help="Type of data to clear (transactions, budgets, or all).")
+):
+    """Clear all transactions or budgets data."""
+    if data_type not in ["transactions", "budgets", "all"]:
+        console.print("[bold red]Error:[/bold red] data_type must be 'transactions', 'budgets', or 'all'.")
+        raise typer.Exit(1)
+    
+    confirm = questionary.confirm(f"Are you sure you want to clear ALL {data_type} data? This action cannot be undone.").ask()
+    if not confirm:
+        console.print("Clear operation cancelled.")
+        raise typer.Exit()
+
+    try:
+        if data_type == "transactions" or data_type == "all":
+            with open("database/transactions.txt", "w") as f:
+                f.write("")
+            console.print("[bold green]All transactions data cleared.[/bold green]")
+        
+        if data_type == "budgets" or data_type == "all":
+            with open("database/budgets.txt", "w") as f:
+                f.write("")
+            console.print("[bold green]All budgets data cleared.[/bold green]")
+
+    except Exception as e:
+        console.print(f"[bold red]Error during clear operation:[/bold red] {e}")
+        raise typer.Exit(1)
+
 if __name__ == "__main__":
     app()
