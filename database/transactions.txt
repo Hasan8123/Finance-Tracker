@@ -2,3 +2,7 @@
 65e1055c-95e0-4d22-9bd8-9df0072384cc,2025-12-05 16:15:15,expense,Rent,150000,Monthly Rent
 46d48461-9982-429e-b06a-445c372907d1,2025-12-05 16:15:29,expense,Groceries,30000,Weekly Groceries
 97ee9adf-e40a-4537-8e6d-d4a3fac7ead3,2025-12-05 16:26:13,expense,Food,5000,Lunch
+9714295b-89dc-4fa3-9b41-2f37dec7d63e,2025-11-20 00:00:00,income,Freelance,120000,Project Payment
+5e78a687-9eb5-4d11-8aab-1c4195e44fdb,2025-12-05 16:34:15,expense,Transport,5000,Bus Fare
+f1e970c0-1d1b-4b30-9460-afa9eadb91ba,2025-12-05 16:35:13,expense,Transport,20000,Weekly Pass
+0f56b880-e05d-4b4a-9580-00f34fdb7c16,2025-11-20 00:00:00,income,Freelance,120000,Project Payment
