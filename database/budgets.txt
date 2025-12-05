@@ -1,1 +1,2 @@
-Food,1000.0
+Food,100000
+Transport,20000

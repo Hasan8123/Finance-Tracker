@@ -1,2 +1,4 @@
-2025-12-05 15:33:33,income,Salary,5000.0,Monthly Salary
-2025-12-05 15:33:46,expense,Food,500.0,Groceries
+7c30b726-da20-469e-94c1-e546cf2bc1dc,2025-12-05 16:14:22,income,Salary,500000,Monthly Salary
+65e1055c-95e0-4d22-9bd8-9df0072384cc,2025-12-05 16:15:15,expense,Rent,150000,Monthly Rent
+46d48461-9982-429e-b06a-445c372907d1,2025-12-05 16:15:29,expense,Groceries,30000,Weekly Groceries
+97ee9adf-e40a-4537-8e6d-d4a3fac7ead3,2025-12-05 16:26:13,expense,Food,5000,Lunch

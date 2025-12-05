@@ -13,19 +13,19 @@ def report():
         budgets = {}
         with open("database/budgets.txt", "r") as f:
             for line in f:
-                category, amount = line.strip().split(",")
-                budgets[category] = float(amount)
+                category, amount_paisa = line.strip().split(",")
+                budgets[category] = int(amount_paisa)
 
         # Read transactions and calculate expenses
         expenses = {}
         with open("database/transactions.txt", "r") as f:
             for line in f:
-                _, type, category, amount, _ = line.strip().split(",")
+                _, _, type, category, amount_paisa, _ = line.strip().split(",")
                 if type == "expense":
                     if category in expenses:
-                        expenses[category] += float(amount)
+                        expenses[category] += int(amount_paisa)
                     else:
-                        expenses[category] = float(amount)
+                        expenses[category] = int(amount_paisa)
 
         # Generate report
         table = Table(title="Expense Report")
@@ -34,10 +34,15 @@ def report():
         table.add_column("Spent")
         table.add_column("Remaining")
 
-        for category, budget in budgets.items():
-            spent = expenses.get(category, 0.0)
-            remaining = budget - spent
-            table.add_row(category, str(budget), str(spent), str(remaining))
+        for category, budget_paisa in budgets.items():
+            spent_paisa = expenses.get(category, 0)
+            remaining_paisa = budget_paisa - spent_paisa
+            
+            budget = budget_paisa / 100
+            spent = spent_paisa / 100
+            remaining = remaining_paisa / 100
+
+            table.add_row(category, f"{budget:.2f}", f"{spent:.2f}", f"{remaining:.2f}")
 
         console.print(table)
 
