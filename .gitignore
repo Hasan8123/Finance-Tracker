@@ -8,3 +8,7 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Exported data files
+export_budgets.json
+export_transactions.csv
